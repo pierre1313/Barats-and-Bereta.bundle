@@ -91,7 +91,7 @@ def Thumb(url):
 def PlayVideo(sender, video_id):
   yt_page = HTTP.Request(YOUTUBE_VIDEO_PAGE % (video_id), cacheTime=1).content
     
-  fmt_url_map = re.findall('"fmt_url_map".+?"([^"]+)', ytPage)[0]
+  fmt_url_map = re.findall('"fmt_url_map".+?"([^"]+)', yt_page)[0]
   fmt_url_map = fmt_url_map.replace('\/', '/').split(',')
 
   fmts = []
